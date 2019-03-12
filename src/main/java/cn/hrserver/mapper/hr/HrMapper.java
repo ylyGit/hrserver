@@ -11,5 +11,5 @@ import org.apache.ibatis.annotations.Param;
 @Mapper
 public interface HrMapper {
     Hr loadUserByUsername(@Param("userName") String userName);
-    Hr getRolesByHrId(Integer id);
+    Hr getRolesByHrId(@Param("id") Integer id);
 }

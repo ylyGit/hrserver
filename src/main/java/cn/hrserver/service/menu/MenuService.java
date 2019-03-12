@@ -10,4 +10,5 @@ import java.util.List;
  */
 public interface MenuService {
     List<Menu> getMenuAll();
+    List<Menu> getMenusByHrId();
 }

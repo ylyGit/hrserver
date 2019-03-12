@@ -1,5 +1,7 @@
 package cn.hrserver.service.menu;
 
+import cn.hrserver.common.HrUtils;
+import cn.hrserver.mapper.menu.MenuMapper;
 import cn.hrserver.pojo.Menu;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
@@ -18,11 +20,17 @@ import java.util.List;
 @CacheConfig(cacheNames = "menus_cache")
 public class MenuServiceImpl implements MenuService {
     @Autowired
-    MenuService menuService;
+    MenuMapper menuMapper;
 
     @Cacheable(key = "#root.methodName")
     @Override
     public List<Menu> getMenuAll() {
-        return menuService.getMenuAll();
+        List<Menu>menus=menuMapper.getMenuAll();
+        return menus;
+    }
+
+    @Override
+    public List<Menu> getMenusByHrId() {
+        return menuMapper.getMenusByHrId(HrUtils.getCurrentHr().getId());
     }
 }

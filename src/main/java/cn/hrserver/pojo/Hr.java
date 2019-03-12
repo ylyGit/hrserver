@@ -12,7 +12,7 @@ import java.util.List;
 
 public class Hr implements UserDetails {
 
-    private long id;
+    private Long id;
     private String name;
     private String phone;
     private String telephone;
@@ -24,11 +24,11 @@ public class Hr implements UserDetails {
     private String remark;
     private List<Role> roles;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -5,34 +5,24 @@ import java.util.List;
 
 public class Menu {
 
-  private long id;
+  private Long id;
   private String url;
   private String path;
-  private String component;
+  private Object component;
   private String name;
   private String iconCls;
-  private long keepAlive;
-  private long requireAuth;
-  private long parentId;
-  private long enabled;
+  private Long parentId;
   private List<Role> roles;
+  private List<Menu> children;
+  private MenuMeta meta;
 
-  public List<Role> getRoles() {
-    return roles;
-  }
-
-  public void setRoles(List<Role> roles) {
-    this.roles = roles;
-  }
-
-  public long getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(long id) {
+  public void setId(Long id) {
     this.id = id;
   }
-
 
   public String getUrl() {
     return url;
@@ -42,7 +32,6 @@ public class Menu {
     this.url = url;
   }
 
-
   public String getPath() {
     return path;
   }
@@ -51,15 +40,13 @@ public class Menu {
     this.path = path;
   }
 
-
-  public String getComponent() {
+  public Object getComponent() {
     return component;
   }
 
-  public void setComponent(String component) {
+  public void setComponent(Object component) {
     this.component = component;
   }
-
 
   public String getName() {
     return name;
@@ -69,7 +56,6 @@ public class Menu {
     this.name = name;
   }
 
-
   public String getIconCls() {
     return iconCls;
   }
@@ -78,40 +64,35 @@ public class Menu {
     this.iconCls = iconCls;
   }
 
-
-  public long getKeepAlive() {
-    return keepAlive;
-  }
-
-  public void setKeepAlive(long keepAlive) {
-    this.keepAlive = keepAlive;
-  }
-
-
-  public long getRequireAuth() {
-    return requireAuth;
-  }
-
-  public void setRequireAuth(long requireAuth) {
-    this.requireAuth = requireAuth;
-  }
-
-
-  public long getParentId() {
+  public Long getParentId() {
     return parentId;
   }
 
-  public void setParentId(long parentId) {
+  public void setParentId(Long parentId) {
     this.parentId = parentId;
   }
 
-
-  public long getEnabled() {
-    return enabled;
+  public List<Role> getRoles() {
+    return roles;
   }
 
-  public void setEnabled(long enabled) {
-    this.enabled = enabled;
+  public void setRoles(List<Role> roles) {
+    this.roles = roles;
   }
 
+  public List<Menu> getChildren() {
+    return children;
+  }
+
+  public void setChildren(List<Menu> children) {
+    this.children = children;
+  }
+
+  public MenuMeta getMeta() {
+    return meta;
+  }
+
+  public void setMeta(MenuMeta meta) {
+    this.meta = meta;
+  }
 }
